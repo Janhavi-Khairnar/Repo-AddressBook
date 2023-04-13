@@ -14,6 +14,15 @@ public class AddressBookMain {
 		 * Welcome message for user
 		 */
 		System.out.println("Welcome to Address Book Program");
+		
+		/***
+		 * Creating the object of the ContactsOperation class and 
+		 * perform the various operation.
+		 */
+		ContactsOperation contactsOperation = new ContactsOperation();
+		
+		contactsOperation.addContacts();
+		contactsOperation.showContacts();
 	}
 
 }
