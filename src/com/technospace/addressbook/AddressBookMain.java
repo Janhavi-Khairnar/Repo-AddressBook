@@ -1,5 +1,7 @@
 package com.technospace.addressbook;
 
+import java.util.Scanner;
+
 /***
  * 
  * @author Lenovo
@@ -20,9 +22,37 @@ public class AddressBookMain {
 		 * perform the various operation.
 		 */
 		ContactsOperation contactsOperation = new ContactsOperation();
+		int no;
+		Scanner sc = new Scanner(System.in);
 		
-		contactsOperation.addContacts();
-		contactsOperation.showContacts();
+		do
+		{
+			System.out.println("**Contacts Menu**");
+			System.out.println("1.Add Contacts \n2.Show Contacts \n3.Edit Contacts \n4.Delete Contacts");
+			System.out.println("Enter the Option :");
+			no = sc.nextInt();
+		
+			switch(no)
+			{
+				case 1:
+					contactsOperation.addContacts();
+				break;
+				case 2:
+					contactsOperation.showContacts();
+				break;
+				case 3:
+					contactsOperation.updateContacts();
+				break;
+				case 4:
+				
+				break;
+			
+				default:
+					System.out.println("Enter the Valid Number.");
+				break;
+			}
+		}
+		while(no<5);
 	}
 
 }
