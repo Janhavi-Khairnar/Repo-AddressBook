@@ -44,9 +44,10 @@ public class AddressBookMain {
 					contactsOperation.updateContacts();
 				break;
 				case 4:
-				
+					contactsOperation.deleteContacts();
+					
 				break;
-			
+					
 				default:
 					System.out.println("Enter the Valid Number.");
 				break;
