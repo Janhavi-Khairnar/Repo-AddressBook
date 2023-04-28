@@ -40,14 +40,14 @@ public class AddressBookMain {
 				case 2:
 					contactsOperation.showContacts();
 				break;
-				case 3:
+	/*			case 3:
 					contactsOperation.updateContacts();
 				break;
 				case 4:
 					contactsOperation.deleteContacts();
 					
 				break;
-					
+		*/			
 				default:
 					System.out.println("Enter the Valid Number.");
 				break;
