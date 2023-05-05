@@ -65,7 +65,6 @@ public class ContactsOperation {
 				
 		}
 		
-	
 	public void updateContacts() {
 	
 		System.out.println("Enter the First Name for Update the Contact :");
