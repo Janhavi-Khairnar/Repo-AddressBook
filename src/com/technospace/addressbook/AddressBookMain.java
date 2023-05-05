@@ -1,5 +1,7 @@
 package com.technospace.addressbook;
 
+import java.awt.Choice;
+import java.util.HashMap;
 import java.util.Scanner;
 
 /***
@@ -21,39 +23,56 @@ public class AddressBookMain {
 		 * Creating the object of the ContactsOperation class and 
 		 * perform the various operation.
 		 */
-		ContactsOperation contactsOperation = new ContactsOperation();
-		int no;
+		
+		
 		Scanner sc = new Scanner(System.in);
+		int choice;
+		HashMap<String,ContactsOperation> contactsOperationMap = new HashMap<String,ContactsOperation>();
 		
-		do
+		do 
 		{
-			System.out.println("**Contacts Menu**");
-			System.out.println("1.Add Contacts \n2.Show Contacts \n3.Edit Contacts \n4.Delete Contacts");
-			System.out.println("Enter the Option :");
-			no = sc.nextInt();
+			System.out.println("Which type of Address Book you have? :");
+			String contactsOperationName = sc.next();
+			
+			
+			ContactsOperation contactsOperation = new ContactsOperation();
+			
+			contactsOperationMap.put(contactsOperationName,contactsOperation);
+			
+			System.out.println("Enter the Address Book Contacts in which you want store the contacts :");
+			String contactsOperationName2 = sc.next();
+			
+			ContactsOperation myAddressbook = contactsOperationMap.get(contactsOperationName2);
 		
-			switch(no)
-			{
+		
+		do	{
+				System.out.println("******Address Book Menu******");
+				
+				System.out.println("1)Add Contacts\n2)Show Contacts\n3)Update Contacts\n4)Delete Contacts");
+				
+				System.out.println("Enter the Choice :");
+				choice = sc.nextInt();
+				
+				switch(choice){
 				case 1:
-					contactsOperation.addContacts();
-				break;
+						myAddressbook.addContacts();
+					break;
 				case 2:
-					contactsOperation.showContacts();
-				break;
-	/*			case 3:
-					contactsOperation.updateContacts();
-				break;
+						myAddressbook.showContacts();
+					break;
+				case 3:
+						myAddressbook.updateContacts();
+					break;
 				case 4:
-					contactsOperation.deleteContacts();
-					
-				break;
-		*/			
+						myAddressbook.deleteContacts();
+					break;
 				default:
-					System.out.println("Enter the Valid Number.");
-				break;
+					System.out.println("Invaild number.");
+					break;
 			}
-		}
-		while(no<5);
+		}while(choice<5);
+	}while(true);
+		
 	}
+} 
 
-}
